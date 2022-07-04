@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using SallesWebMvc.Models;
 
 namespace SallesWebMvc.Controllers
-{
+{//p
     public class DepartamentsController : Controller
     {
         private readonly SallesWebMvcContext _context;
