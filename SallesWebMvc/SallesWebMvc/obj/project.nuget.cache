@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "96o4z22PNPF28Hke3Uu2wQCgodk3+mb0FzZuMEbFzW+IIhQJdpNh3sk1xpzkwOGHJJdw9HnbEwvj2P3W1wRgow==",
+  "dgSpecHash": "e5ZnX8YKWUOSJD/M/oB0F2s7QziXQDt6CtU33qK0b4lndx1UdZNDaEAO79ZWix602DjC/XeFNvGLU/pKoltqIg==",
   "success": true,
   "projectFilePath": "C:\\Users\\PICHAU\\source\\repos\\Projetos_Profissionais\\SallesWebMvc\\SallesWebMvc\\SallesWebMvc.csproj",
   "expectedPackageFiles": [
@@ -112,7 +112,7 @@
     "C:\\Users\\PICHAU\\.nuget\\packages\\microsoft.entityframeworkcore.design\\2.1.14\\microsoft.entityframeworkcore.design.2.1.14.nupkg.sha512",
     "C:\\Users\\PICHAU\\.nuget\\packages\\microsoft.entityframeworkcore.inmemory\\2.1.1\\microsoft.entityframeworkcore.inmemory.2.1.1.nupkg.sha512",
     "C:\\Users\\PICHAU\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\2.1.14\\microsoft.entityframeworkcore.relational.2.1.14.nupkg.sha512",
-    "C:\\Users\\PICHAU\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\2.1.1\\microsoft.entityframeworkcore.sqlserver.2.1.1.nupkg.sha512",
+    "C:\\Users\\PICHAU\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\2.1.14\\microsoft.entityframeworkcore.sqlserver.2.1.14.nupkg.sha512",
     "C:\\Users\\PICHAU\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\2.1.14\\microsoft.entityframeworkcore.tools.2.1.14.nupkg.sha512",
     "C:\\Users\\PICHAU\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\2.1.1\\microsoft.extensions.caching.abstractions.2.1.1.nupkg.sha512",
     "C:\\Users\\PICHAU\\.nuget\\packages\\microsoft.extensions.caching.memory\\2.1.1\\microsoft.extensions.caching.memory.2.1.1.nupkg.sha512",
