@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SallesWebMvc.Models;
 using SallesWebMvc.Services;
 using SallesWebMvc.Models;
 
