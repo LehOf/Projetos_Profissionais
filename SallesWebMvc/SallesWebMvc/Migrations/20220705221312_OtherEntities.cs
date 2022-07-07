@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 
 namespace SallesWebMvc.Migrations
 {
@@ -6,68 +8,69 @@ namespace SallesWebMvc.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_Sales_Seller_SellerId",
-                table: "Sales");
+            migrationBuilder.CreateTable(
+              name: "Seller",
+              columns: table => new
+              {
+                  Id = table.Column<int>(nullable: false)
+                      .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                  Name = table.Column<string>(nullable: true),
+                  Email = table.Column<string>(nullable: true),
+                  BirthDate = table.Column<DateTime>(nullable: false),
+                  BaseSalary = table.Column<double>(nullable: false),
+                  DepartamentId = table.Column<int>(nullable: true)
+              },
+              constraints: table =>
+              {
+                  table.PrimaryKey("PK_Seller", x => x.Id);
+                  table.ForeignKey(
+                      name: "FK_Seller_Departament_DepartamentId",
+                      column: x => x.DepartamentId,
+                      principalTable: "Departament",
+                      principalColumn: "Id",
+                      onDelete: ReferentialAction.Restrict);
+              });
 
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_Sales",
-                table: "Sales");
+            migrationBuilder.CreateTable(
+                name: "SalesRecord",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Date = table.Column<DateTime>(nullable: false),
+                    Amount = table.Column<double>(nullable: false),
+                    Status = table.Column<int>(nullable: false),
+                    SellerId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_SalesRecord", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_SalesRecord_Seller_SellerId",
+                        column: x => x.SellerId,
+                        principalTable: "Seller",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
 
-            migrationBuilder.RenameTable(
-                name: "Sales",
-                newName: "SalesRecord");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_Sales_SellerId",
+            migrationBuilder.CreateIndex(
+                name: "IX_SalesRecord_SellerId",
                 table: "SalesRecord",
-                newName: "IX_SalesRecord_SellerId");
+                column: "SellerId");
 
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_SalesRecord",
-                table: "SalesRecord",
-                column: "Id");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_SalesRecord_Seller_SellerId",
-                table: "SalesRecord",
-                column: "SellerId",
-                principalTable: "Seller",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+            migrationBuilder.CreateIndex(
+                name: "IX_Seller_DepartamentId",
+                table: "Seller",
+                column: "DepartamentId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DropForeignKey(
-                name: "FK_SalesRecord_Seller_SellerId",
-                table: "SalesRecord");
+            migrationBuilder.DropTable(
+                name: "SalesRecord");
 
-            migrationBuilder.DropPrimaryKey(
-                name: "PK_SalesRecord",
-                table: "SalesRecord");
-
-            migrationBuilder.RenameTable(
-                name: "SalesRecord",
-                newName: "Sales");
-
-            migrationBuilder.RenameIndex(
-                name: "IX_SalesRecord_SellerId",
-                table: "Sales",
-                newName: "IX_Sales_SellerId");
-
-            migrationBuilder.AddPrimaryKey(
-                name: "PK_Sales",
-                table: "Sales",
-                column: "Id");
-
-            migrationBuilder.AddForeignKey(
-                name: "FK_Sales_Seller_SellerId",
-                table: "Sales",
-                column: "SellerId",
-                principalTable: "Seller",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Restrict);
+            migrationBuilder.DropTable(
+                name: "Seller");
         }
     }
 }
