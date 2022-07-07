@@ -32,5 +32,7 @@ namespace SallesWebMvc.Controllers
             _sellerService.Insert(seller);
             return RedirectToAction(nameof(Index));
         }
+
+
     }
 }

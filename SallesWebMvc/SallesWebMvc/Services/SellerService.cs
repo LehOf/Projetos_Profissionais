@@ -24,5 +24,6 @@ namespace SallesWebMvc.Services
             _context.Add(obj);
             _context.SaveChanges();
         }
+
     }
 }
